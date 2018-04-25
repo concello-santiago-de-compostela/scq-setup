@@ -1,5 +1,5 @@
 Package: scq-setup
-Version: 1.3
+Version: 1.4
 Maintainer: Rafael Rodríguez <rrodriguezg@santiagodecompostela.gal>
 Architecture: amd64
 Description: Configuraciones iniciales de equipos de escritorio. Incluye cambios en GRUB, deshabilitar servicios, etc.
