@@ -1,4 +1,4 @@
-Package: setup-scq
+Package: scq-setup
 Version: 1.3
 Maintainer: Rafael Rodríguez <rrodriguezg@santiagodecompostela.gal>
 Architecture: amd64
