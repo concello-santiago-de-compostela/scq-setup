@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/lib/vino/vino-server
+Hidden=false
+X-MATE-Autostart-enabled=true
+Name[es_ES]=Vino Server
+Name=Vino Server
+Comment[es_ES]=
+Comment=
