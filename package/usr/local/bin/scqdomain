@@ -15,13 +15,13 @@ fi
 
 
 # Instala la herramienta pbis-open
-echo sudo apt install pbis-open -y
+sudo apt install pbis-open -y
 
 # Añade el equipo a dominio
-echo sudo domainjoin-cli join concello.santiagodecompostela.org $1
+sudo domainjoin-cli join concello.santiagodecompostela.org $1
 
 # Configura las opciones globales de pbis-open
-echo sudo /opt/pbis/bin/config UserDomainPrefix CONCELLO
-echo sudo /opt/pbis/bin/config AssumeDefaultDomain True
-echo sudo /opt/pbis/bin/config LoginShellTemplate /bin/bash
-echo sudo /opt/pbis/bin/config HomeDirTemplate %H/%U
+sudo /opt/pbis/bin/config UserDomainPrefix CONCELLO
+sudo /opt/pbis/bin/config AssumeDefaultDomain True
+sudo /opt/pbis/bin/config LoginShellTemplate /bin/bash
+sudo /opt/pbis/bin/config HomeDirTemplate %H/%U
