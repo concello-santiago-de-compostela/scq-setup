@@ -1,10 +1,8 @@
 # Modifica Grub para establecer 10 segundos de espera
 sed -i -e '/GRUB_HIDDEN_TIMEOUT/d' /etc/default/grub
 
-# Evita la salida de mensajes de error relacionados con pcieport
-sed -i -e 's/quiet splash/quiet splash pci=nomsi/' /etc/default/grub
-
-update-grub
+# Evita la salida de mensajes de error relacionados con pcieport para portátiles ASUS
+grep -q nomsi /etc/default/grub || (sed -i -e 's/quiet splash/quiet splash pci=nomsi/' /etc/default/grub && update-grub)
 
 sed -i -e 's/enabled=1/enabled=0/' /etc/default/apport
 systemctl restart apport
