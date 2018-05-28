@@ -1,5 +1,5 @@
 Package: scq-setup
-Version: 1.5
+Version: 1.6
 Maintainer: Rafael Rodríguez <rrodriguezg@santiagodecompostela.gal>
 Depends: scq-pbis
 Architecture: amd64
