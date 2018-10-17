@@ -4,3 +4,4 @@ Maintainer: Rafael Rodríguez <rrodriguezg@santiagodecompostela.gal>
 Depends: scq-pbis, ocsinventory-agent
 Architecture: amd64
 Description: Configuraciones iniciales de equipos de escritorio. Incluye cambios en GRUB, deshabilitar servicios, etc.
+	Distribución: Ubuntu MATE 18.04
