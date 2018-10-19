@@ -22,3 +22,24 @@ EOF
 # Configura el servidor remoto de OCSInventory
 echo "server=http://scqocsi01.concello.santiagodecompostela.org/ocsinventory" > /etc/ocsinventory/ocsinventory-agent.cfg
 
+# Configura el servidor de VNC
+
+cat <<EOF >/etc/systemd/system/x11vnc.service
+[Unit]
+Description="x11vnc"
+Requires=display-manager.service
+After=display-manager.service
+
+[Service]
+ExecStart=/usr/bin/x11vnc -xkb -noxrecord -noxfixes -noxdamage -display :0 -auth guess -rfbauth /etc/x11vnc.pass
+ExecStop=/usr/bin/killall x11vnc
+Restart=on-failure
+Restart-sec=2
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+systemctl daemon-reload
+systemctl start x11vnc
+systemctl enable x11vnc

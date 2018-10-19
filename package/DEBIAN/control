@@ -1,7 +1,7 @@
 Package: scq-setup
-Version: 1.7
+Version: 1.8
 Maintainer: Rafael Rodríguez <rrodriguezg@santiagodecompostela.gal>
-Depends: scq-pbis, ocsinventory-agent
+Depends: scq-pbis, ocsinventory-agent, python-cups, x11vnc
 Architecture: amd64
 Description: Configuraciones iniciales de equipos de escritorio. Incluye cambios en GRUB, deshabilitar servicios, etc.
 	Distribución: Ubuntu MATE 18.04
