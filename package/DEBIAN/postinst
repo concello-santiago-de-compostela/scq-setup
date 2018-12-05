@@ -1,16 +1,6 @@
 sed -i -e 's/enabled=1/enabled=0/' /etc/default/apport
 systemctl restart apport
 
-# Habilita el inicio de sesión manual y oculta la lista de usuarios
-cat <<EOF >/etc/lightdm/ligthdm.conf
-[Seat:*]
-greeter-show-manual-login=true
-greeter-hide-users=false
-EOF
-
-# Oculta el usuario 'administrador' en la ventana de login
-sed -i -e 's/SystemAccount=false/SystemAccount=true/' /var/lib/AccountsService/users/administrador
-
 # Deshabilita las actualizaciones automáticas
 cat <<EOF >/etc/apt/apt.conf.d/10periodic
 APT::Periodic::Update-Package-Lists "0";
@@ -18,9 +8,6 @@ APT::Periodic::Download-Upgradeable-Packages "0";
 APT::Periodic::AutocleanInterval "0";
 APT::Periodic::Unattended-Upgrade "0";
 EOF
-
-# Configura el servidor remoto de OCSInventory
-echo "server=http://scqocsi01.concello.santiagodecompostela.org/ocsinventory" > /etc/ocsinventory/ocsinventory-agent.cfg
 
 # Configura el servidor de VNC
 

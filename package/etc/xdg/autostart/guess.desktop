@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/local/bin/guess
+Hidden=False
+X-MATE-autostart-enabled=true
+Name[ES_es]=Guess message
+Name=Guess message
