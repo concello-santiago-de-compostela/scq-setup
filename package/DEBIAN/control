@@ -1,7 +1,7 @@
 Package: scq-setup
-Version: 1.0
+Version: 1.2
 Maintainer: Rafael Rodríguez <rrodriguezg@santiagodecompostela.gal>
 Depends: python-cups, x11vnc
-Architecture: amd64
+Architecture: all
 Description: Configuraciones iniciales de equipos de escritorio. Incorpora cambios personalizados para equipos de Centros, como la activación de la cuenta de invitado. 
 	Distribución: Ubuntu MATE 18.04
