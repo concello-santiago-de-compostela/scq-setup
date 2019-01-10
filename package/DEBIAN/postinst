@@ -33,6 +33,6 @@ systemctl enable x11vnc
 
 # Configura GRUB sin tiempo de espera
 
-sed -i -e 's/GRUB_TIMEOUT=0/GRUB_TIMEOUT=-1/' /etc/default/grub
+sed -i -e 's/GRUB_TIMEOUT=10/GRUB_TIMEOUT=-1/' /etc/default/grub
 update-grub
 
