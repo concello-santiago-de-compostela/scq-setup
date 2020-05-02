@@ -1,22 +1,39 @@
-# Modifica Grub para establecer 10 segundos de espera
-sed -i -e '/GRUB_HIDDEN_TIMEOUT/d' /etc/default/grub
+# Establece el inicio de sesión automático con el usuario por defecto; 'usuario'
 
-# Evita la salida de mensajes de error relacionados con pcieport para portátiles ASUS
-grep -q nomsi /etc/default/grub || (sed -i -e 's/quiet splash/quiet splash pci=nomsi/' /etc/default/grub && update-grub)
+echo "[SeatDefaults]\ngreeter-session=lightdm-gtk-greeter\nautologin-user=usuario\n" > /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf
 
-sed -i -e 's/enabled=1/enabled=0/' /etc/default/apport
-systemctl restart apport
+# Activa el inicio automático de Zoom al iniciar sesión
 
-echo "[SeatDefaults]\nallow-guest=false\n" > /etc/lightdm/lightdm.conf.d/50-no-guest.conf
-
-# Deshabilita las actualizaciones automáticas
-cat <<EOF >/etc/apt/apt.conf.d/10periodic
-APT::Periodic::Update-Package-Lists "0";
-APT::Periodic::Download-Upgradeable-Packages "0";
-APT::Periodic::AutocleanInterval "0";
-APT::Periodic::Unattended-Upgrade "0";
+cat <<EOF >/home/usuario/.config/autostart/zoom.desktop
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/zoom
+Hidden=false
+X-MATE-Autostart-enabled=true
+Name[gl_ES]=Zoom
+Name=Zoom
+Comment[gl_ES]=Launch Zoom
+Comment=Launch Zoom
 EOF
 
-# Configura el servidor remoto de OCSInventory
-echo "server=http://scqocsi01.concello.santiagodecompostela.org/ocsinventory" > /etc/ocsinventory/ocsinventory-agent.cfg
+# Configura el servidor de VNC
+# Hay que crear de forma manual el fichero con la contraseña de acceso 'x11vnc.pass'
 
+cat <<EOF >/etc/systemd/system/x11vnc.service
+[Unit]
+Description="x11vnc"
+Requires=display-manager.service
+After=display-manager.service
+
+[Service]
+ExecStart=/usr/bin/x11vnc -xkb -noxrecord -noxfixes -noxdamage -display :0 -auth guess -rfbauth /etc/x11vnc.pass
+ExecStop=/usr/bin/killall x11vnc
+Restart=on-failure
+Restart-sec=2
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+systemctl daemon-reload
+systemctl enable --now x11vnc
