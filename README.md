@@ -1,2 +1,2 @@
 # scq-setup
-Configuración inicial de equipos con Ubuntu 16.04
+Configuración inicial de equipos con Debian 10 buster 

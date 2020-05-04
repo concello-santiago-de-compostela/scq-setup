@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/zoom
+Hidden=false
+X-MATE-Autostart-enabled=true
+Name[gl_ES]=Zoom
+Name=Zoom
+Comment[gl_ES]=Launch Zoom
+Comment=Launch Zoom

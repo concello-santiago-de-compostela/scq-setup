@@ -2,20 +2,6 @@
 
 echo "[SeatDefaults]\ngreeter-session=lightdm-gtk-greeter\nautologin-user=usuario\n" > /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf
 
-# Activa el inicio automático de Zoom al iniciar sesión
-
-cat <<EOF >/home/usuario/.config/autostart/zoom.desktop
-[Desktop Entry]
-Type=Application
-Exec=/usr/bin/zoom
-Hidden=false
-X-MATE-Autostart-enabled=true
-Name[gl_ES]=Zoom
-Name=Zoom
-Comment[gl_ES]=Launch Zoom
-Comment=Launch Zoom
-EOF
-
 # Configura el servidor de VNC
 # Hay que crear de forma manual el fichero con la contraseña de acceso 'x11vnc.pass'
 
