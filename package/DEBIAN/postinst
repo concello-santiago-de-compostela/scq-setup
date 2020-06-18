@@ -2,6 +2,11 @@
 
 echo "[SeatDefaults]\ngreeter-session=lightdm-gtk-greeter\nautologin-user=usuario\n" > /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf
 
+# Desactiva la gestión de dispositivos por parte del cliente de migsafree
+# Evita que se muestre el error «CUPS is not running!!!»
+
+sed -i -e 's/# Manage_Devices = False/Manage_Devices = False/' /etc/migasfree.conf
+
 # Configura el servidor de VNC
 # Hay que crear de forma manual el fichero con la contraseña de acceso 'x11vnc.pass'
 
