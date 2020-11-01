@@ -1,6 +1,6 @@
 Package: scq-setup
-Version: 1.7
+Version: 1.0
 Maintainer: Rafael Rodríguez <rrodriguezg@santiagodecompostela.gal>
-Depends: scq-pbis, ocsinventory-agent
-Architecture: amd64
-Description: Configuraciones iniciales de equipos de escritorio. Incluye cambios en GRUB, deshabilitar servicios, etc.
+Depends: pptp-linux, pcsc-tools, remmina
+Architecture: armhf
+Description: Configuraciones iniciales de RapsberryPi para o seu como equipo de teletraballo.

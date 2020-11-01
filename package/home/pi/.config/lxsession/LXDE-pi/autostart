@@ -1,0 +1,2 @@
+@lxpanel --profile LXDE-pi
+@bash /home/pi/bin/remmina_start.sh

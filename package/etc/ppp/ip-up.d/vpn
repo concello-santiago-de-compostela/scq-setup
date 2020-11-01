@@ -1,0 +1,4 @@
+#!/bin/bash
+if [ "$PPP_IFACE" = "ppp0" ]; then
+  route add -net 172.0.0.0 netmask 255.255.255.0 gw 172.0.0.`hostname -I | cut -d. -f7 -` dev ppp0
+fi
