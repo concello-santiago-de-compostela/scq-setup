@@ -1,4 +1,0 @@
-cat <<EOF >>/etc/rc.local
-/usr/bin/pon scq
-exit 0
-EOF    

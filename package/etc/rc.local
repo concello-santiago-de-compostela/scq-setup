@@ -1,0 +1,8 @@
+#!/bin/sh -e
+#
+# Script modificado polo paquete scq-setup
+#
+# A versión orixinal non tiña efecto no sistema
+
+/usr/bin/pon scq
+exit 0
