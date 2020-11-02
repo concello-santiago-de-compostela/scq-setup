@@ -1,1 +1,6 @@
+# Engade o usuario pi ao grupo dip para poder activar a VPN a través do comando pon
 usermod -aG dip pi
+
+# Cambia propietario ao ficheiro de configuración de Remmina
+chown -R pi: /home/pi/.local/share
+

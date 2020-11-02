@@ -1,5 +1,5 @@
 [remmina]
-    sound=on
+    sound=remote
     sharefolder=
     resolution_mode=1
     serialdriver=
@@ -21,7 +21,7 @@
     group=
     ssh_charset=
     resolution_height=0
-    server=172.0.0.47:12345
+    server=172.0.0.22:12345
     ssh_loopback=0
     enableproxy=0
     username=
