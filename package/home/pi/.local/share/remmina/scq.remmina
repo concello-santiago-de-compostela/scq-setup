@@ -1,5 +1,5 @@
 [remmina]
-    sound=remote
+    sound=local,22050,2
     sharefolder=
     resolution_mode=1
     serialdriver=
@@ -13,7 +13,7 @@
     shareparallel=0
     ssh_enabled=0
     serialpath=
-    colordepth=66
+    colordepth=15
     loadbalanceinfo=
     disable_fastpath=0
     ssh_auth=0
